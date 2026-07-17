@@ -8,34 +8,61 @@
   </head>
 
   <body>
-    <h1>환영 인사</h1>
+    <header>
+      <h1>환영 인사</h1>
+      <p>스칼라에 오신 것을 환영합니다.</p>
+    </header>
 
-    <p>스칼라에 오신 것을 환영합니다.</p>
+    <nav>
+      <h2>바로가기</h2>
+      <ul>
+        <li><a href="myClass.html">나의 수업(myclass)</a></li>
+        <li><a href="myHoliday.html">나의 휴일(myHoliday)</a></li>
+        <li><a href="myProfile.html">나의 프로필(myProfile)</a></li>
+        <li><a href="signUp.html">회원가입(signUp)</a></li>
+        <li><a href="myHoliday.html">나의 여행지</a></li>
+      </ul>
+    </nav>
 
-    <h2>바로가기</h2>
+    <hr />
 
-    <a href="myClass.html">나의 수업(myclass)</a>
+    <main>
+      <section class="game-section">
+        <h2>🎮 Up-Down 숫자 맞추기</h2>
+        <p>컴퓨터가 생각한 1부터 50 사이의 숫자를 맞혀보세요.</p>
 
-    <a href="myHoliday.html">나의 휴일(myHoliday)</a>
+        <button type="button" onclick="startUpDownGame()">게임 시작</button>
+      </section>
 
-    <a href="myProfile.html">나의 프로필(myProfile)</a>
+      <section>
+        <h2>📊 성적 계산기</h2>
 
-    <a href="signUp.html">회원가입(signUp)</a>
+        <button type="button" onclick="calculateGrade()">성적 계산기</button>
+      </section>
 
-    <section class="game-section">
-      <h2>🎮 Up-Down 숫자 맞추기</h2>
-      <p>컴퓨터가 생각한 1부터 50 사이의 숫자를 맞혀보세요.</p>
+      <section>
+        <h2>🎒 내 가방</h2>
 
-      <button type="button" onclick="startUpDownGame()">게임 시작</button>
-    </section>
+        <button type="button" onclick="ShowMyBag()">가방 건들기 🎒</button>
+      </section>
+    </main>
 
-    <section>
-      <h2>📊 성적 계산기</h2>
+    <hr />
 
-      <button type="button" onclick="calculateGrade()">성적 계산기</button>
-    </section>
+    <aside>
+      <h2>💡 실시간 정보</h2>
+      <p>현재 위치 : 광주광역시 광산구 📍</p>
+      <p>
+        추천 학습 사이트 :
+        <a href="https://www.w3schools.com" target="_blank">W3Schools 온라인 튜토리얼</a>
+      </p>
+    </aside>
 
-    <button type="button" onclick="ShowMyBag()">가방 건들기 🎒</button>
+    <hr />
+
+    <footer>
+      <p><small>© 2026 박기택. 웹 표준 시맨틱 태그로 작성되었습니다.</small></p>
+    </footer>
 
     <script src="../script/upDown.js"></script>
     <script src="../script/grade.js"></script>
