@@ -4,38 +4,78 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>나의 여행지</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
   <body>
-    <h2>🌏 나의 여행 앨범 🎵</h2>
+    <nav class="topnav">
+      <span class="brand"><span class="cn">박기택의</span> 스칼라 행보</span>
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="myClass.html">수업</a></li>
+        <li><a href="myTrip.html" class="active">여행지</a></li>
+        <li><a href="myHoliday.html">휴일</a></li>
+        <li><a href="myProfile.html">프로필</a></li>
+        <li><a href="signUp.html">회원가입</a></li>
+      </ul>
+    </nav>
 
-    <audio controls>
-      <source src="../media/music.mp3" type="audio/mpeg" />
-      브라우저가 audio 태그를 지원하지 않습니다.
-    </audio>
+    <div class="container">
+      <h1>🌏 나의 여행 앨범 🎵</h1>
+      <p>발길 닿은 곳들의 기록입니다. 배경 음악과 함께 감상해 보세요.</p>
 
-    <figure>
-      <img src="../media/리장.jpg" alt="리장 호도협" width="400" />
-      <figcaption>리장 호도협 (2025년)</figcaption>
-    </figure>
+      <audio id="bgm" controls autoplay loop>
+        <source src="../media/music.mp3" type="audio/mpeg" />
+        브라우저가 audio 태그를 지원하지 않습니다.
+      </audio>
 
-    <figure>
-      <img src="../media/세부.jpg" alt="세부 탑스힐" width="400" />
-      <figcaption>세부 탑스힐 (2024년)</figcaption>
-    </figure>
+      <div class="trip-grid">
+        <article class="trip-card">
+          <div class="trip-photo">
+            <img src="../media/gunsan.jpg" alt="군산 앞바다" />
+          </div>
+          <span class="place">📍 군산 갯벌</span>
+          <h3>군산역 앞 바다</h3>
+          <p>
+            군산역 앞 산책거리를 거닐며 바닷가 금강하굿둑을 바라보며 (2026년)
+          </p>
+        </article>
 
-    <figure>
-      <img src="../media/홋카이도.jpg" alt="홋카이도 다이세츠산" width="400" />
-      <figcaption>홋카이도 다이설산 (2025년)</figcaption>
-    </figure>
+        <article class="trip-card">
+          <div class="trip-photo">
+            <img src="../media/iksan.jpg" alt="익산 미륵사지" />
+          </div>
+          <span class="place">📍 익산 미륵사지</span>
+          <h3>익산 미륵사지 야경 전망</h3>
+          <p>새벽에 바라본 미륵사지 백제의 고풍 그대로 (2026년)</p>
+        </article>
 
-    <h2>🎬 나의 여행 브이로그</h2>
+        <article class="trip-card">
+          <div class="trip-photo">
+            <img src="../media/seoul.jpg" alt="서울 명동시장 국수집" />
+          </div>
+          <span class="place">📍 서울 명동 시장 국수집</span>
+          <h3>명동의 외국인 관광 국수집</h3>
+          <p>따듯한 비빔밥과 국수를 한번에 즐길 수 있다. (2025년)</p>
+        </article>
+      </div>
 
-    <figure>
-      <video controls width="400">
-        <source src="../media/video.mp4" type="video/mp4" />
-        브라우저가 video 태그를 지원하지 않습니다.
-      </video>
-      <figcaption>리장의 아름다운 음악 🎶</figcaption>
-    </figure>
+      <section class="vlog">
+        <h2>🎬 나의 여행 브이로그</h2>
+        <figure>
+          <video controls width="400">
+            <source src="../media/video.mp4" type="video/mp4" />
+            브라우저가 video 태그를 지원하지 않습니다.
+          </video>
+          <figcaption>리장의 아름다운 음악 🎶</figcaption>
+        </figure>
+      </section>
+
+      <p style="margin-top: 1.4rem">
+        <a href="index.html">← 메인으로 돌아가기</a>
+      </p>
+      <footer>© 2026 박기택. 웹 표준 시맨틱 태그로 작성되었습니다.</footer>
+    </div>
+
+    <script src="../script/bgm.js"></script>
   </body>
 </html>

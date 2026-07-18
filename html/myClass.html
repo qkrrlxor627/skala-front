@@ -4,151 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>백엔드 개발자 강의 시간표</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-    <h2>📅 백엔드 개발자 강의 시간표</h2>
+    <nav class="topnav">
+        <span class="brand"><span class="cn">박기택의</span> 스칼라 행보</span>
+        <ul>
+            <li><a href="index.html">홈</a></li>
+            <li><a href="myClass.html" class="active">수업</a></li>
+            <li><a href="myTrip.html">여행지</a></li>
+            <li><a href="myHoliday.html">휴일</a></li>
+            <li><a href="myProfile.html">프로필</a></li>
+            <li><a href="signUp.html">회원가입</a></li>
+        </ul>
+    </nav>
 
-    <table border="1" cellspacing="0" cellpadding="13" width="800">
-        <thead>
-            <tr>
-                <th width="100">시간</th>
-                <th width="140">월요일</th>
-                <th width="140">화요일</th>
-                <th width="140">수요일</th>
-                <th width="140">목요일</th>
-                <th width="140">금요일</th>
-            </tr>
-        </thead>
+    <div class="container">
+        <h1>📅 백엔드 개발자 강의 시간표</h1>
+        <p>한 주 동안 백엔드 기초부터 실전까지, 매화검처럼 날카롭게 수련합니다.</p>
 
-        <tbody>
-            <tr>
-                <td>09:00 - 10:00</td>
+        <div class="table-wrap">
+            <table class="timetable">
+                <caption>SKALA-FRONT 백엔드 트랙 · 2026년 수련 일정</caption>
+                <thead>
+                    <tr>
+                        <th>시간</th>
+                        <th>월요일</th>
+                        <th>화요일</th>
+                        <th>수요일</th>
+                        <th>목요일</th>
+                        <th>금요일</th>
+                    </tr>
+                </thead>
 
-                <td rowspan="3">
-                    Java<br>
-                    객체지향 프로그래밍 ☕
-                </td>
+                <tbody>
+                    <tr>
+                        <th>09:00 - 10:00</th>
+                        <td rowspan="3">Java<br>객체지향 프로그래밍 ☕</td>
+                        <td rowspan="3">컴퓨터 네트워크<br>HTTP 통신 기초 🌐</td>
+                        <td rowspan="3">Spring Boot<br>웹 API 개발 🛠</td>
+                        <td>백엔드 기술 특강 🔥</td>
+                        <td rowspan="3">REST API<br>설계 및 실습 🚀</td>
+                    </tr>
 
-                <td rowspan="3">
-                    컴퓨터 네트워크<br>
-                    HTTP 통신 기초 🌐
-                </td>
+                    <tr>
+                        <th>10:00 - 11:00</th>
+                        <td rowspan="2">관계형 데이터베이스<br>SQL 실습 🗄</td>
+                    </tr>
 
-                <td rowspan="3">
-                    Spring Boot<br>
-                    웹 API 개발 🛠
-                </td>
+                    <tr>
+                        <th>11:00 - 12:00</th>
+                    </tr>
 
-                <td>
-                    백엔드 기술 특강 🔥
-                </td>
+                    <tr>
+                        <th>12:00 - 13:00</th>
+                        <td class="lunch" colspan="5">🍱 점심시간 ☕</td>
+                    </tr>
 
-                <td rowspan="3">
-                    REST API<br>
-                    설계 및 실습 🚀
-                </td>
-            </tr>
+                    <tr>
+                        <th>13:00 - 14:00</th>
+                        <td rowspan="3">서버 아키텍처<br>설계 원칙 🏗️</td>
+                        <td rowspan="2">리눅스 서버<br>운영 실습 🐧</td>
+                        <td rowspan="2">클라우드 인프라<br>AWS 실습 ☁️</td>
+                        <td rowspan="2">자료구조와 알고리즘 📊</td>
+                        <td>백엔드 개인 프로젝트 🚀</td>
+                    </tr>
 
-            <tr>
-                <td>10:00 - 11:00</td>
+                    <tr>
+                        <th>14:00 - 15:00</th>
+                        <td rowspan="2">인증과 인가<br>서버 보안 🔐</td>
+                    </tr>
 
-                <td rowspan="2">
-                    관계형 데이터베이스<br>
-                    SQL 실습 🗄
-                </td>
-            </tr>
+                    <tr>
+                        <th>15:00 - 16:00</th>
+                        <td rowspan="2">Git &amp; GitHub<br>협업과 배포 🌸</td>
+                        <td rowspan="2">테스트 자동화<br>코드 품질 관리 🧪</td>
+                        <td rowspan="2">대용량 트래픽<br>성능 최적화 📈</td>
+                    </tr>
 
-            <tr>
-                <td>11:00 - 12:00</td>
-            </tr>
+                    <tr>
+                        <th>16:00 - 17:00</th>
+                        <td></td>
+                        <td>주간 회고 📝</td>
+                    </tr>
 
-            <tr>
-                <td>12:00 - 13:00</td>
+                    <tr>
+                        <th>17:00 - 18:00</th>
+                        <td>백엔드 취업 특강 💼</td>
+                        <td class="free" colspan="4">백엔드 자율 학습 및 팀 프로젝트</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-                <td colspan="5" align="center">
-                    🍱 점심시간 ☕
-                </td>
-            </tr>
-
-            <tr>
-                <td>13:00 - 14:00</td>
-
-                <td rowspan="4">
-                    서버 아키텍처<br>
-                    설계 원칙 🏗️
-                </td>
-
-                <td rowspan="2">
-                    리눅스 서버<br>
-                    운영 실습 🐧
-                </td>
-
-                <td rowspan="2">
-                    클라우드 인프라<br>
-                    AWS 실습 ☁️
-                </td>
-
-                <td rowspan="2">
-                    자료구조와 알고리즘 📊
-                </td>
-
-                <td>
-                    백엔드 개인 프로젝트 🚀
-                </td>
-            </tr>
-
-            <tr>
-                <td>14:00 - 15:00</td>
-
-                <td rowspan="2">
-                    인증과 인가<br>
-                    서버 보안 🔐
-                </td>
-            </tr>
-
-            <tr>
-                <td>15:00 - 16:00</td>
-
-                <td rowspan="2">
-                    Git &amp; GitHub<br>
-                    협업과 배포 🌸
-                </td>
-
-                <td rowspan="2">
-                    테스트 자동화<br>
-                    코드 품질 관리 🧪
-                </td>
-
-                <td rowspan="2">
-                    대용량 트래픽<br>
-                    성능 최적화 📈
-                </td>
-            </tr>
-
-            <tr>
-                <td>16:00 - 17:00</td>
-
-                <td>
-                    주간 회고 📝
-                </td>
-            </tr>
-
-            <tr>
-                <td>17:00 - 18:00</td>
-
-                <td>
-                    백엔드 취업 특강 💼
-                </td>
-
-                <td colspan="4" align="center">
-                    백엔드 자율 학습 및 팀 프로젝트
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <p><a href="index.html">← 메인으로 돌아가기</a></p>
+        <footer>© 2026 박기택. 웹 표준 시맨틱 태그로 작성되었습니다.</footer>
+    </div>
 
 </body>
 </html>
-```

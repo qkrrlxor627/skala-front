@@ -3,66 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Welcome SKALA</title>
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
-    <header>
-      <h1>환영 인사</h1>
-      <p>스칼라에 오신 것을 환영합니다.</p>
-    </header>
-
-    <nav>
-      <h2>바로가기</h2>
+    <nav class="topnav">
+      <span class="brand"><span class="cn">박기택의</span> 스칼라 행보</span>
       <ul>
-        <li><a href="myClass.html">나의 수업(myclass)</a></li>
-        <li><a href="myHoliday.html">나의 휴일(myHoliday)</a></li>
-        <li><a href="myProfile.html">나의 프로필(myProfile)</a></li>
-        <li><a href="signUp.html">회원가입(signUp)</a></li>
-        <li><a href="myHoliday.html">나의 여행지</a></li>
+        <li><a href="index.html" class="active">홈</a></li>
+        <li><a href="myClass.html">수업</a></li>
+        <li><a href="myTrip.html">여행지</a></li>
+        <li><a href="myHoliday.html">휴일</a></li>
+        <li><a href="myProfile.html">프로필</a></li>
+        <li><a href="signUp.html">회원가입</a></li>
       </ul>
     </nav>
 
-    <hr />
+    <div class="container">
+      <header class="hero">
+        <div class="hero-text">
+          <span class="badge">SKALA</span>
+          <h1>환영 인사</h1>
+          <p>
+            스칼라에 오신 것을 환영합니다. 매화처럼 추위를 이겨내며 정진하는
+            개발자의 박기택입니다.
+          </p>
+        </div>
+      </header>
 
-    <main>
-      <section class="game-section">
-        <h2>🎮 Up-Down 숫자 맞추기</h2>
-        <p>컴퓨터가 생각한 1부터 50 사이의 숫자를 맞혀보세요.</p>
+      <nav class="shortcuts" aria-label="바로가기">
+        <h2>바로가기</h2>
+        <ul>
+          <li><a href="myClass.html">나의 수업(myclass)</a></li>
+          <li><a href="myHoliday.html">나의 휴일(myHoliday)</a></li>
+          <li><a href="myProfile.html">나의 프로필(myProfile)</a></li>
+          <li><a href="signUp.html">회원가입(signUp)</a></li>
+          <li><a href="myTrip.html">나의 여행지</a></li>
+        </ul>
+      </nav>
 
-        <button type="button" onclick="startUpDownGame()">게임 시작</button>
-      </section>
+      <div class="layout">
+        <main>
+          <section class="panel game-section">
+            <h2>
+              <img class="maehwa" src="../media/maehwa.svg" alt="" /> Up-Down
+              숫자 맞추기
+            </h2>
+            <p>컴퓨터가 생각한 1부터 50 사이의 숫자를 맞혀보세요.</p>
+            <button class="btn" type="button" onclick="startUpDownGame()">
+              게임 시작
+            </button>
+          </section>
 
-      <section>
-        <h2>📊 성적 계산기</h2>
+          <section class="panel">
+            <h2>
+              <img class="maehwa" src="../media/maehwa.svg" alt="" /> 성적
+              계산기
+            </h2>
+            <p>과목별 점수를 입력하면 평균과 학점을 계산해 드립니다.</p>
+            <button class="btn" type="button" onclick="calculateGrade()">
+              성적 계산기
+            </button>
+          </section>
 
-        <button type="button" onclick="calculateGrade()">성적 계산기</button>
-      </section>
+          <section class="panel">
+            <h2>
+              <img class="maehwa" src="../media/maehwa.svg" alt="" /> 내 가방
+            </h2>
+            <p>오늘 챙겨야 할 준비물을 담아보세요.</p>
+            <button class="btn" type="button" onclick="ShowMyBag()">
+              가방 건들기
+            </button>
+          </section>
+        </main>
 
-      <section>
-        <h2>🎒 내 가방</h2>
+        <aside>
+          <section class="panel">
+            <h2>💡 실시간 정보</h2>
+            <p>현재 위치 : 광주광역시 광산구 📍</p>
+            <p>
+              추천 학습 사이트 :
+              <a href="https://www.w3schools.com" target="_blank" rel="noopener"
+                >W3Schools 온라인 튜토리얼</a
+              >
+            </p>
+          </section>
 
-        <button type="button" onclick="ShowMyBag()">가방 건들기 🎒</button>
-      </section>
-    </main>
+          <section class="quote">
+            <h3>오늘의 한마디</h3>
+            <blockquote>"매화는 추위를 이겨내야 향기를 낸다."</blockquote>
+            <cite>— 매화불구한(梅花不懼寒)</cite>
+          </section>
+        </aside>
+      </div>
 
-    <hr />
-
-    <aside>
-      <h2>💡 실시간 정보</h2>
-      <p>현재 위치 : 광주광역시 광산구 📍</p>
-      <p>
-        추천 학습 사이트 :
-        <a href="https://www.w3schools.com" target="_blank">W3Schools 온라인 튜토리얼</a>
-      </p>
-    </aside>
-
-    <hr />
-
-    <footer>
-      <p><small>© 2026 박기택. 웹 표준 시맨틱 태그로 작성되었습니다.</small></p>
-    </footer>
+      <footer>
+        <p>
+          <small>© 2026 박기택. 웹 표준 시맨틱 태그로 작성되었습니다.</small>
+        </p>
+      </footer>
+    </div>
 
     <script src="../script/upDown.js"></script>
     <script src="../script/grade.js"></script>

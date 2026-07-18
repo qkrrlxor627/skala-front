@@ -1,0 +1,708 @@
+/* 웹폰트 — 제목: Noto Serif KR / 본문: Noto Sans KR */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap");
+
+/* 테마 토큰 — 전 페이지에서 재사용하는 색·그림자 */
+:root {
+  --plum: #c94f6d;
+  --plum-dark: #a5314f;
+  --plum-soft: #f7e3e8;
+  --ink: #2a241e;
+  --paper: #fbf8f3;
+  --paper-card: #ffffff;
+  --gold: #b08a45;
+  --seal: #c0392b;
+  --line: #e9e1d4;
+  --muted: #6e645a;
+  --shadow: 0 8px 24px rgba(90, 70, 50, 0.1);
+}
+
+/* 전역 기초 */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  line-height: 1.8;
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(110% 55% at 50% -6%, var(--plum-soft), transparent 60%),
+    radial-gradient(60% 36% at 92% 34%, #fdeef2, transparent 65%),
+    radial-gradient(64% 40% at 4% 72%, #f4ede1, transparent 62%);
+  background-attachment: fixed;
+}
+
+/* 제목 타이포 (전 페이지 공통) */
+h1,
+h2 {
+  font-family: "Noto Serif KR", serif;
+  color: var(--plum);
+  padding: 6px 0 6px 16px;
+  border-left: 5px solid var(--plum);
+  line-height: 1.35;
+}
+h1 {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 2rem;
+}
+h3 {
+  font-family: "Noto Serif KR", serif;
+  color: var(--plum-dark);
+  font-size: 1.1rem;
+}
+
+/* 링크 · 형광펜(mark) (전 페이지 공통) */
+a {
+  color: var(--plum-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+a:hover {
+  color: var(--gold);
+  text-decoration: underline;
+}
+mark {
+  background: linear-gradient(transparent 55%, var(--plum-soft) 55%);
+  color: var(--plum-dark);
+  padding: 0 2px;
+  font-weight: 600;
+}
+
+/* 미디어 반응형 — 이미지·영상이 컨테이너 밖으로 안 넘치게 (전 페이지) */
+img {
+  max-width: 100%;
+  height: auto;
+}
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 매화 아이콘 — 제목·버튼 옆 인라인 아이콘 크기/정렬  */
+.maehwa {
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.2em;
+}
+
+/* .container — 본문을 가운데 정렬하는 카드 래퍼 (전 페이지 공통) */
+.container {
+  max-width: 1000px;
+  margin: 32px auto;
+  padding: 36px 40px;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--gold);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* 페이지 하단 푸터 (전 페이지 공통) */
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* .topnav — 상단 고정 내비게이션 바 (전 페이지 공통) */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--ink);
+  color: #f7ecdb;
+  padding: 0 28px;
+  height: 60px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+.topnav .brand {
+  font-family: "Noto Serif KR", serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #fff;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.topnav .brand .cn {
+  color: var(--gold);
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+}
+.topnav ul {
+  list-style: none;
+  display: flex;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+.topnav a {
+  display: block;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #e6d8c4;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+.topnav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-decoration: none;
+}
+.topnav a.active {
+  /* 현재 보고 있는 페이지 메뉴 강조 */
+  background: var(--plum);
+  color: #fff;
+}
+@media (max-width: 786px) {
+  /* 좁은 화면: 상단 내비를 세로로 쌓음 (전역 반응형은 파일 맨 아래) */
+  .topnav {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 16px;
+    gap: 10px;
+  }
+  .topnav ul {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+/* .hero — index 상단 환영 배너 */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: linear-gradient(120deg, #2a241e 0%, #3a2b28 58%, #5a2a38 100%);
+  border-radius: 10px;
+  padding: 26px 30px;
+  margin-bottom: 26px;
+  box-shadow: var(--shadow);
+}
+.hero .hero-text {
+  color: #f7ecdb;
+}
+.hero .hero-text h1 {
+  color: #fff;
+  border-left-color: var(--gold);
+  padding-left: 16px;
+  margin: 0 0 6px;
+  animation: fadeInDown 1s ease both; /* 페이지 진입 시 제목 등장 */
+}
+.hero .hero-text p {
+  margin: 0;
+  color: #e9d7c2;
+}
+.hero .badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: "Noto Serif KR", serif;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 3px 14px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+/* index 히어로 제목 등장 애니메이션 (.hero h1 에서 사용) */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .shortcuts — index 바로가기 메뉴 (링크를 가로 flex 로 배치) */
+.shortcuts ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  margin: 0 0 26px;
+}
+.shortcuts a {
+  display: block;
+  padding: 9px 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  font-weight: 600;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease;
+}
+.shortcuts a:hover {
+  background: var(--plum);
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/* .layout — index 본문(main 넓게) + 사이드(aside 좁게) 2단 배치 */
+.layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+.layout main {
+  flex: 2;
+  min-width: 0;
+}
+.layout aside {
+  flex: 1;
+  min-width: 0;
+}
+
+/* .panel — index 콘텐츠 카드 섹션 (게임·계산기·가방·실시간정보) */
+section.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+}
+section.panel p {
+  margin: 0.4rem 0;
+}
+
+/* .btn — index 기본 버튼 (게임 시작·성적 계산기·가방 건들기) */
+.btn {
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--plum);
+  color: #fff;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease,
+    box-shadow 0.3s ease;
+}
+.btn:hover {
+  background: var(--plum-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(165, 49, 79, 0.3);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* .quote — index 사이드(aside) 명언 카드 */
+.quote {
+  background: linear-gradient(160deg, #332721, #2a241e);
+  color: #f3e6d3;
+  border-radius: 10px;
+  padding: 22px 24px;
+  border: 1px solid #4a3a33;
+}
+.quote h3 {
+  color: var(--gold);
+  margin-top: 0;
+}
+.quote blockquote {
+  margin: 0;
+  font-family: "Noto Serif KR", serif;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+.quote cite {
+  display: block;
+  margin-top: 10px;
+  color: var(--plum-soft);
+  font-style: normal;
+  font-size: 0.9rem;
+}
+
+/* .timetable — myClass 강의 시간표 */
+.timetable {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 1rem;
+  background: var(--paper-card);
+  box-shadow: var(--shadow);
+}
+.timetable caption {
+  caption-side: bottom;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding-top: 0.7rem;
+}
+.timetable th {
+  background: var(--ink);
+  color: #f7ecdb;
+  padding: 12px 10px;
+  font-weight: 700;
+  border: 1px solid #3a302a;
+  border-bottom: 3px solid var(--plum);
+}
+.timetable td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.9rem;
+}
+.timetable tbody th {
+  /* 각 행 첫 칸(시간대) 강조 */
+  background: #f4ecdd;
+  color: var(--plum-dark);
+  white-space: nowrap;
+  border: 1px solid var(--line);
+}
+.timetable td.lunch {
+  /* 점심시간 칸 */
+  background: var(--plum-soft);
+  color: var(--plum-dark);
+  font-weight: 700;
+}
+.timetable td.free {
+  /* 자율학습 칸 */
+  background: #f4ecd7;
+  color: var(--muted);
+  font-style: italic;
+}
+.timetable tr:hover td {
+  background: #fdf6ef;
+  transition: background-color 0.25s ease;
+}
+
+/* .trip-* — myTrip 여행 카드 (3열 그리드 + hover 시 떠오름) */
+.trip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 1.2rem;
+}
+.trip-card {
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+  margin: 0;
+  box-shadow: 0 3px 10px rgba(90, 70, 50, 0.08);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+.trip-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 30px rgba(90, 70, 50, 0.2);
+}
+.trip-photo {
+  /* 사진을 카드 폭에 맞춰 잘라 담는 틀 */
+  height: 180px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: block;
+  background: #efe7d6;
+}
+.trip-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.trip-card h3 {
+  margin: 0.2rem 0 0.4rem;
+}
+.trip-card .place {
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.trip-card p {
+  font-size: 0.92rem;
+  color: var(--ink);
+  margin: 0.4rem 0 0;
+}
+
+/* .vlog — myTrip 오디오·영상(브이로그) 영역 */
+.vlog {
+  margin-top: 2rem;
+}
+.vlog figure {
+  margin: 1rem 0 0;
+}
+.vlog figcaption {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* .day-block · .schedule — myHoliday 하루 일과 목록 */
+.day-block {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--gold);
+  border-radius: 8px;
+  padding: 8px 20px 16px;
+  margin-bottom: 18px;
+}
+.schedule {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.schedule li {
+  padding: 7px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.schedule li:last-child {
+  border-bottom: none;
+}
+.schedule .time {
+  display: inline-block;
+  min-width: 64px;
+  color: var(--plum);
+  font-weight: 700;
+}
+
+/* .profile-list · dl.words — myProfile 소개 목록/정의 */
+.profile-list li {
+  margin: 0.3rem 0;
+}
+dl.words dt {
+  font-family: "Noto Serif KR", serif;
+  color: var(--plum-dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-top: 14px;
+}
+dl.words dd {
+  margin: 0.2rem 0 0 1.2rem;
+  color: var(--ink);
+}
+
+/* .result-container — signUpResult 안내 페이지 제목 포인트색 */
+.result-container h1 {
+  border-left-color: var(--seal);
+  color: var(--plum-dark);
+}
+
+/* form — signUp 회원가입 폼: 그룹 상자·라벨 */
+form fieldset {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 20px 22px;
+  margin: 0 0 22px;
+  background: var(--paper);
+}
+form legend {
+  font-family: "Noto Serif KR", serif;
+  color: var(--plum);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 0 10px;
+}
+form label {
+  display: inline-block;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.field {
+  margin-bottom: 16px;
+}
+.field > label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* signUp 입력창(input·textarea·select) + 포커스 강조 */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 11px 13px;
+  font-size: 1rem;
+  font-family: "Noto Sans KR", sans-serif;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--plum);
+  box-shadow: 0 0 0 3px rgba(201, 79, 109, 0.15); /* 포커스 링 */
+}
+textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+.hint {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-left: 6px;
+}
+.req {
+  color: var(--plum);
+  font-weight: 700;
+}
+
+/* signUp 라디오·체크박스 묶음(.choice-group) + 이메일 한 줄(.inline-row) */
+.choice-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.choice:hover {
+  border-color: var(--plum);
+  background: var(--plum-soft);
+}
+.choice input {
+  width: auto;
+  margin: 0;
+  accent-color: var(--plum);
+}
+.inline-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.inline-row input {
+  flex: 1;
+}
+.inline-row select {
+  width: auto;
+}
+
+/* signUp 하단 버튼 — 제출(플럼) / 다시작성(회색) */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+button[type="submit"],
+input[type="submit"] {
+  background: var(--plum);
+  color: #fff;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
+}
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: var(--plum-dark);
+  transform: translateY(-2px);
+}
+button[type="reset"],
+input[type="reset"] {
+  background: #efe7d6;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  padding: 13px 26px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.15s ease;
+}
+button[type="reset"]:hover,
+input[type="reset"]:hover {
+  background: #e2d6bd;
+  transform: translateY(-2px);
+}
+
+/* 반응형 — 786px 이하: 가로 2단 배치를 세로 1단으로 전환 */
+@media (max-width: 786px) {
+  .container {
+    margin: 16px;
+    padding: 22px 18px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .layout {
+    /* index 본문+사이드 → 세로 1단 */
+    flex-direction: column;
+  }
+  .shortcuts ul {
+    /* 바로가기 메뉴 → 세로 1단 */
+    flex-direction: column;
+  }
+  .trip-grid {
+    /* 여행 카드 3열 → 1열 */
+    grid-template-columns: 1fr;
+  }
+  .table-wrap {
+    /* myClass 시간표는 좁은 화면에서 가로 스크롤 */
+    overflow-x: auto;
+  }
+  .timetable {
+    min-width: 640px;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions button,
+  .form-actions input {
+    width: 100%;
+  }
+}
