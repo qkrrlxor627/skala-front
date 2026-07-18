@@ -2,7 +2,7 @@
 
 > 매화처럼 추위를 이겨내며 정진하는 개발자의 개인 웹사이트.
 
-전 페이지가 시맨틱 태그와 하나의 공통 스타일시트(`css/style.css`)로 작성되었으며,
+전 페이지가 시맨틱 태그와 하나의 공통 스타일시트로 작성되었으며,
 실시간 날씨 API, 브라우저 게임(업다운·성적 계산기·내 가방), 여행 앨범(오디오·비디오)까지
 바닐라 자바스크립트로 구현했습니다.
 
@@ -64,37 +64,14 @@ skala-front/
 
 ## 🧩 스크립트 상세
 
-| 파일              | 진입점                 | 하는 일                                                                           |
-| ----------------- | ---------------------- | --------------------------------------------------------------------------------- |
-| `upDown.js`       | `startUpDownGame()`    | 1~50 임의의 수를 `prompt`/`alert`로 Up·Down 힌트를 주며 맞히는 게임               |
-| `grade.js`        | `calculateGrade()`     | HTML·CSS·JavaScript 3과목 점수 입력 → 총점·평균·합격 여부(평균 60↑) 계산          |
-| `bag.js`          | `ShowMyBag()`          | 가방 속 물품 목록과 종류 개수를 `alert`로 표시                                    |
-| `bgm.js`          | (자동 실행)            | 여행 앨범 배경음악 자동재생 — 브라우저 자동재생 차단 시 첫 클릭/키 입력에 재생    |
-| `weatherAPI.js`   | `getWeather(lat, lon)` | Open-Meteo API에서 기온·습도만 골라 반환 (**화면 코드 없음**)                     |
-| `realtimeInfo.js` | (자동 실행)            | 도시 드롭다운 구성 · 선택 시 날씨 렌더 (**fetch 코드 없음**, `getWeather` import) |
-
-### 날씨 모듈 설계 (관심사 분리)
-
-```
-realtimeInfo.js  ──import──▶  weatherAPI.js
- (화면 그리는 일)               (날씨 가져오는 일)
-  · 도시 목록/드롭다운            · fetch(Open-Meteo)
-  · 로딩·결과·에러 렌더           · 기온·습도만 추려서 반환
-```
-
-- `weatherAPI.js`에는 `document`/`innerHTML`이 **없고**, `realtimeInfo.js`에는 `fetch`가 **없습니다.**
-- 대상 도시: 서울 · 도쿄 · 파리 · 뉴욕 · 시드니 (별도 API 키 불필요).
-
----
-
-## 🎨 스타일 시스템 (`css/style.css`)
-
-- **테마 토큰** — `:root` CSS 변수로 매화(plum) 색·구분선·그림자를 한 곳에서 관리
-- **리셋** — `* { box-sizing: border-box; }` 로 패딩 때문에 칸이 삐져나가는 문제 예방
-- **웹폰트** — 제목 `Noto Serif KR` / 본문 `Noto Sans KR`
-- **레이아웃** — 홈은 `main`(넓게) + `aside`(좁게) 2단, 여행지는 카드 그리드
-- **반응형** — `@media (max-width: 786px)`에서 2단 → 세로 1단, 상단 내비 스택, 표는 가로 스크롤
-- **접근성** — `aria-label`, 이미지 `alt`, `label`/`for` 연결, 시맨틱 태그(`nav`/`main`/`aside`/`section`/`figure`)
+| 파일              | 진입점                 | 하는 일                                   |
+| ----------------- | ---------------------- | ----------------------------------------- |
+| `upDown.js`       | `startUpDownGame()`    | 1~50 임의의 수를 맞추는 업다운 게임       |
+| `grade.js`        | `calculateGrade()`     | 점수를 입력하여 총점, 평균, 합격여부 계산 |
+| `bag.js`          | `ShowMyBag()`          | 가방 속 물품 목록과 종류 개수를 표시      |
+| `bgm.js`          | (자동 실행)            | 여행 앨범 배경음악                        |
+| `weatherAPI.js`   | `getWeather(lat, lon)` | Open-Meteo API에서 기온·습도만 골라 반환  |
+| `realtimeInfo.js` | (자동 실행)            | 도시 드롭다운 구성 · 선택 시 날씨 렌더    |
 
 ---
 
