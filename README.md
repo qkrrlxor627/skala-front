@@ -69,9 +69,9 @@ skala-front/
 | `upDown.js`       | `startUpDownGame()`    | 1~50 임의의 수를 맞추는 업다운 게임       |
 | `grade.js`        | `calculateGrade()`     | 점수를 입력하여 총점, 평균, 합격여부 계산 |
 | `bag.js`          | `ShowMyBag()`          | 가방 속 물품 목록과 종류 개수를 표시      |
-| `bgm.js`          | (자동 실행)            | 여행 앨범 배경음악                        |
+| `bgm.js`          | (자동 실행)            | 여행 앨범 배경음악 자동 실행              |
 | `weatherAPI.js`   | `getWeather(lat, lon)` | Open-Meteo API에서 기온·습도만 골라 반환  |
-| `realtimeInfo.js` | (자동 실행)            | 도시 드롭다운 구성 · 선택 시 날씨 렌더    |
+| `realtimeInfo.js` | (자동 실행)            | 도시 드롭다운 구성 · 선택 시 날씨 렌더링  |
 
 ---
 
