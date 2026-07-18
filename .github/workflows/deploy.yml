@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:          # 저장소 Actions 탭에서 수동 실행 가능
+
+permissions:                  # Pages 배포에 필요한 최소 권한
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:                  # 동시 배포 방지 (마지막 실행이 유효)
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Stage site files              # 사이트 파일만 _site/ 로 복사 (.git 제외)
+        run: |
+          mkdir -p _site
+          cp -r css html media script _site/
+          # 루트 리다이렉트 → html/index.html (자동 리다이렉트)
+          cat > _site/index.html <<'EOF'
+          <!DOCTYPE html>
+          <html lang="ko">
+          <head>
+            <meta charset="utf-8">
+            <meta http-equiv="refresh" content="0; url=./html/index.html">
+            <link rel="canonical" href="./html/index.html">
+            <title>Redirecting…</title>
+          </head>
+          <body>
+            페이지로 이동 중입니다… <a href="./html/index.html">여기</a>를 클릭하세요.
+          </body>
+          </html>
+          EOF
+          touch _site/.nojekyll                # Jekyll 처리 방지(안전장치)
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
