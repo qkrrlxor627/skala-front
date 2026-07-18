@@ -45,49 +45,110 @@
 
       <div class="layout">
         <main>
-          <section class="panel game-section">
+          <!-- 소식 -->
+          <section class="panel news">
             <h2>
-              <img class="maehwa" src="../media/maehwa.svg" alt="" /> Up-Down
-              숫자 맞추기
+              <img class="maehwa" src="../media/maehwa.svg" alt="" /> 스칼라
+              소식
             </h2>
-            <p>컴퓨터가 생각한 1부터 50 사이의 숫자를 맞혀보세요.</p>
-            <button class="btn" type="button" onclick="startUpDownGame()">
-              게임 시작
-            </button>
+            <ul class="news-list">
+              <li>
+                <span class="news-date">2026.07.18</span>
+                <span class="news-body">
+                  <mark>웹 표준 정리 작업</mark> 완료
+                </span>
+              </li>
+              <li>
+                <span class="news-date">2026.07.17</span>
+                <span class="news-body">
+                  <mark>군산·익산 답사 </mark>사진을
+                  <a href="myTrip.html">여행 앨범</a>에 새로 올렸습니다.
+                </span>
+              </li>
+              <li>
+                <span class="news-date">2026.07.16</span>
+                <span class="news-body">
+                  첫 프론트엔드 프로젝트를 시작했습니다.
+                </span>
+              </li>
+            </ul>
           </section>
 
-          <section class="panel">
+          <!-- 베스트컷 -->
+          <section class="panel bestcut">
             <h2>
-              <img class="maehwa" src="../media/maehwa.svg" alt="" /> 성적
-              계산기
+              <img class="maehwa" src="../media/maehwa.svg" alt="" /> 이달의
+              베스트컷
             </h2>
-            <p>과목별 점수를 입력하면 평균과 학점을 계산해 드립니다.</p>
-            <button class="btn" type="button" onclick="calculateGrade()">
-              성적 계산기
-            </button>
-          </section>
-
-          <section class="panel">
-            <h2>
-              <img class="maehwa" src="../media/maehwa.svg" alt="" /> 내 가방
-            </h2>
-            <p>오늘 챙겨야 할 준비물을 담아보세요.</p>
-            <button class="btn" type="button" onclick="ShowMyBag()">
-              가방 건들기
-            </button>
+            <p>
+              발길 닿은 곳에서 담은 사진들. 더 보려면
+              <a href="myTrip.html">여행 앨범</a>으로.
+            </p>
+            <div class="bestcut-grid">
+              <figure class="trip-card">
+                <div class="trip-photo">
+                  <img src="../media/gunsan.jpg" alt="군산 앞바다" />
+                </div>
+                <span class="place">📍 군산 갯벌</span>
+                <figcaption>군산역 앞 바다</figcaption>
+              </figure>
+              <figure class="trip-card">
+                <div class="trip-photo">
+                  <img src="../media/iksan.jpg" alt="익산 미륵사지" />
+                </div>
+                <span class="place">📍 익산 미륵사지</span>
+                <figcaption>미륵사지 야경</figcaption>
+              </figure>
+              <figure class="trip-card">
+                <div class="trip-photo">
+                  <img src="../media/seoul.jpg" alt="서울 명동 국수집" />
+                </div>
+                <span class="place">📍 서울 명동</span>
+                <figcaption>명동 국수집</figcaption>
+              </figure>
+            </div>
           </section>
         </main>
 
         <aside>
-          <section class="panel">
+          <section class="panel realtime-info">
             <h2>💡 실시간 정보</h2>
             <p>현재 위치 : 광주광역시 광산구 📍</p>
             <p>
               추천 학습 사이트 :
               <a href="https://www.w3schools.com" target="_blank" rel="noopener"
-                >W3Schools 온라인 튜토리얼</a
+                >W3Schools</a
               >
             </p>
+
+            <div class="weather">
+              <label for="city-select">🌤 실시간 세계 날씨</label>
+              <select id="city-select"></select>
+              <div id="weather-box"></div>
+            </div>
+          </section>
+
+          <section class="panel side-games">
+            <h2>🎮 놀이터</h2>
+            <div class="side-buttons">
+              <button
+                class="btn side-btn"
+                type="button"
+                onclick="startUpDownGame()"
+              >
+                🔢 업다운 숫자 맞추기
+              </button>
+              <button
+                class="btn side-btn"
+                type="button"
+                onclick="calculateGrade()"
+              >
+                📊 성적 계산기
+              </button>
+              <button class="btn side-btn" type="button" onclick="ShowMyBag()">
+                🎒 내 가방 보기
+              </button>
+            </div>
           </section>
 
           <section class="quote">
@@ -108,5 +169,6 @@
     <script src="../script/upDown.js"></script>
     <script src="../script/grade.js"></script>
     <script src="../script/bag.js"></script>
+    <script type="module" src="../script/realtimeInfo.js"></script>
   </body>
 </html>

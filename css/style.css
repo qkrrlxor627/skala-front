@@ -318,6 +318,58 @@ section.panel p {
   transform: translateY(0);
 }
 
+/* .news-list — index 메인 '스칼라 소식' 최신 글 목록 */
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+}
+.news-list li {
+  display: flex;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+}
+.news-list li:last-child {
+  border-bottom: none;
+}
+.news-list .news-date {
+  flex: 0 0 auto;
+  min-width: 62px;
+  color: var(--plum);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* .bestcut-grid — index 메인 '이달의 베스트컷' 사진 그리드 (trip-card 재사용) */
+.bestcut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 18px;
+  margin-top: 1rem;
+}
+.bestcut-grid .trip-photo {
+  height: 130px;
+}
+.bestcut-grid figcaption {
+  font-family: "Noto Serif KR", serif;
+  color: var(--plum-dark);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* .side-buttons — index 사이드바(aside) '놀이터' 세로 버튼 묶음 */
+.side-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 0.6rem;
+}
+.side-btn {
+  width: 100%;
+  text-align: left;
+}
+
 /* .quote — index 사이드(aside) 명언 카드 */
 .quote {
   background: linear-gradient(160deg, #332721, #2a241e);
@@ -342,6 +394,28 @@ section.panel p {
   color: var(--plum-soft);
   font-style: normal;
   font-size: 0.9rem;
+}
+
+/* .weather — index 사이드바 '실시간 세계 날씨' 위젯 (realtimeInfo.js 가 채움) */
+.weather {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+.weather label {
+  display: block;
+  font-weight: 700;
+  color: var(--plum-dark);
+  margin-bottom: 6px;
+}
+#weather-box {
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: var(--paper-card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 /* .timetable — myClass 강의 시간표 */
